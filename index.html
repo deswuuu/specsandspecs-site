@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Specs &amp; Specs Optical &mdash; Queen Street West, Toronto</title>
+<meta name="description" content="Specs &amp; Specs Optical — Toronto's independent eyewear boutique on Queen St W since 1993. Prescription glasses, sunglasses, designer frames, and repairs. Multi-lingual staff. Walk-ins welcome.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --cream:       #F8F6F2;
+  --cream-deep:  #EEE9E1;
+  --white:       #FFFFFF;
+  --stone:       #D4CEC6;
+  --ink:         #1A1410;
+  --body-txt:    #4A3F35;
+  --light-txt:   #9A8E82;
+
+  --orange:      #E8601A;
+  --orange-soft: #FDEEE5;
+  --orange-mid:  #F5945C;
+  --blue:        #2AABBF;
+  --blue-dark:   #1B8A9E;
+  --blue-soft:   #E0F5F8;
+
+  --ff: 'Lexend', system-ui, sans-serif;
+}
+
+html { scroll-behavior: smooth; }
+body { font-family: var(--ff); background: var(--cream); color: var(--ink); overflow-x: hidden; }
+img { max-width: 100%; display: block; }
+a { text-decoration: none; color: inherit; }
+.container { max-width: 1160px; margin: 0 auto; padding: 0 32px; }
+
+/* BUTTONS */
+.btn-primary   { display:inline-flex;align-items:center;gap:8px;background:var(--orange);color:#fff;padding:13px 28px;border-radius:50px;font-family:var(--ff);font-size:12px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;border:none;cursor:pointer;transition:background .2s,transform .15s; }
+.btn-primary:hover { background:#C44E12;transform:translateY(-1px); }
+.btn-outline-dark  { display:inline-flex;align-items:center;gap:8px;background:transparent;color:var(--ink);padding:12px 27px;border-radius:50px;font-family:var(--ff);font-size:12px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;border:2px solid var(--ink);cursor:pointer;transition:all .2s; }
+.btn-outline-dark:hover { background:var(--ink);color:#fff; }
+.btn-outline-orange { display:inline-flex;align-items:center;gap:8px;background:transparent;color:var(--orange);padding:12px 27px;border-radius:50px;font-family:var(--ff);font-size:12px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;border:2px solid var(--orange);cursor:pointer;transition:all .2s; }
+.btn-outline-orange:hover { background:var(--orange);color:#fff; }
+.btn-stone  { display:inline-flex;align-items:center;gap:8px;background:transparent;color:var(--ink);padding:12px 27px;border-radius:50px;font-family:var(--ff);font-size:12px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;border:2px solid var(--stone);cursor:pointer;transition:all .2s; }
+.btn-stone:hover { border-color:var(--blue);color:var(--blue); }
+
+/* HEADER */
+header { position:sticky;top:0;z-index:100;background:rgba(248,246,242,.96);backdrop-filter:blur(12px);border-bottom:3px solid var(--orange); }
+.header-inner { max-width:1160px;margin:0 auto;padding:0 32px;display:flex;align-items:center;justify-content:space-between;height:72px; }
+.logo-wrap { display:flex;align-items:center;gap:12px; }
+.logo-text { display:flex;flex-direction:column;line-height:1; }
+.logo-main { font-family:var(--ff);font-size:18px;font-weight:800;color:var(--ink); }
+.logo-sub  { font-family:var(--ff);font-size:9px;font-weight:400;letter-spacing:.16em;text-transform:uppercase;color:var(--light-txt);margin-top:4px; }
+nav { display:flex;gap:28px; }
+nav a { font-family:var(--ff);font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--body-txt);transition:color .2s; }
+nav a:hover { color:var(--orange); }
+.header-actions { display:flex;align-items:center;gap:16px; }
+.header-phone { font-family:var(--ff);font-size:13px;font-weight:700;color:var(--blue-dark); }
+.hamburger { display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;background:none;border:none; }
+.hamburger span { display:block;width:22px;height:2px;background:var(--ink);border-radius:2px; }
+
+/* MOBILE NAV */
+.mobile-nav { display:none;position:fixed;inset:0;background:var(--cream);z-index:99;flex-direction:column;padding:100px 32px 48px; }
+.mobile-nav.open { display:flex; }
+.mobile-nav a { font-family:var(--ff);font-size:26px;font-weight:800;color:var(--ink);border-bottom:1px solid var(--stone);padding:16px 0; }
+.mobile-nav a:hover { color:var(--orange); }
+.mobile-nav .mob-phone { font-family:var(--ff);font-size:16px;font-weight:700;color:var(--blue-dark);margin-top:24px; }
+
+/* HERO */
+.hero { position:relative;overflow:hidden;min-height:calc(100vh - 72px);display:flex;align-items:center; }
+.hero-img { position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;z-index:0; }
+.hero-overlay { position:absolute;inset:0;z-index:1;background:linear-gradient(to right,rgba(26,20,16,.82) 0%,rgba(26,20,16,.62) 42%,rgba(26,20,16,.1) 75%,transparent 100%); }
+.hero-content { position:relative;z-index:2;max-width:1160px;margin:0 auto;padding:0 32px;width:100%; }
+.hero-inner { max-width:520px; }
+.eyebrow { display:inline-flex;align-items:center;gap:10px;font-family:var(--ff);font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--orange);margin-bottom:18px; }
+.eyebrow::before { content:'';width:24px;height:2px;background:var(--orange);border-radius:1px; }
+.eyebrow.blue { color:var(--blue); }
+.eyebrow.blue::before { background:var(--blue); }
+.hero-h1 { font-family:var(--ff);font-size:clamp(40px,5vw,66px);font-weight:900;color:#fff;line-height:1.08;margin-bottom:12px; }
+.hero-h1 .accent { color:var(--orange); }
+.hero-divider { width:48px;height:3px;background:var(--blue);margin:22px 0;border-radius:2px; }
+.hero-sub { font-family:var(--ff);font-size:16px;font-weight:300;color:rgba(255,255,255,.82);line-height:1.75;max-width:400px;margin-bottom:36px; }
+.hero-actions { display:flex;gap:14px;flex-wrap:wrap; }
+
+/* TRUST STRIP */
+.trust-strip { background:var(--orange);border-bottom:none; }
+.trust-inner { max-width:1160px;margin:0 auto;padding:0 32px;display:flex;align-items:stretch;height:60px; }
+.trust-item { display:flex;align-items:center;gap:10px;flex:1;padding:0 20px;border-right:1px solid rgba(255,255,255,.25); }
+.trust-item:first-child { padding-left:0; }
+.trust-item:last-child { border-right:none; }
+.trust-dot { width:6px;height:6px;background:#fff;border-radius:50%;flex-shrink:0;opacity:.7; }
+.trust-label { font-family:var(--ff);font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:#fff;white-space:nowrap; }
+.trust-sub { font-family:var(--ff);font-size:11px;font-weight:300;color:rgba(255,255,255,.7);white-space:nowrap; }
+
+/* SECTIONS */
+.section { padding:96px 0; }
+.section-title { font-family:var(--ff);font-size:clamp(28px,3.5vw,48px);font-weight:800;line-height:1.1;color:var(--ink); }
+.section-title .accent { color:var(--orange); }
+.section-title.light { color:var(--ink); }
+.section-body { font-family:var(--ff);font-size:15px;font-weight:300;color:var(--body-txt);line-height:1.8;max-width:520px;margin-top:16px; }
+.section-divider { width:48px;height:3px;background:var(--blue);margin:20px 0;border-radius:2px; }
+
+/* SERVICES */
+.services-bg { background:var(--cream); }
+.services-hd { display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:52px;gap:24px;flex-wrap:wrap; }
+.services-grid { display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--stone); }
+.service-card { background:var(--white);padding:36px 28px;transition:background .2s;position:relative;overflow:hidden; }
+.service-card::before { content:'';position:absolute;top:0;left:0;width:4px;height:0;background:var(--orange);transition:height .25s;border-radius:0 2px 2px 0; }
+.service-card:hover { background:var(--cream); }
+.service-card:hover::before { height:100%; }
+.service-icon { width:42px;height:42px;background:var(--blue-soft);border-radius:12px;display:grid;place-items:center;margin-bottom:18px; }
+.service-icon svg { width:18px;height:18px;color:var(--blue-dark); }
+.service-name { font-family:var(--ff);font-size:19px;font-weight:700;color:var(--ink);margin-bottom:10px; }
+.service-desc { font-family:var(--ff);font-size:13px;font-weight:300;color:var(--body-txt);line-height:1.7; }
+.service-arrow { font-size:16px;color:var(--orange);margin-top:18px;opacity:0;transform:translateX(-4px);transition:all .2s;display:block; }
+.service-card:hover .service-arrow { opacity:1;transform:translateX(0); }
+
+/* WHY US */
+.why-bg { background:var(--cream-deep); }
+.why-grid { display:grid;grid-template-columns:5fr 4fr;gap:80px;align-items:center; }
+.why-img-wrap { position:relative; }
+.why-img-main { width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center;border-radius:16px;display:block; }
+.why-credential { position:absolute;bottom:-20px;right:-20px;background:var(--orange);padding:22px 26px;border-radius:14px; }
+.why-credential .num { font-family:var(--ff);font-size:38px;font-weight:900;color:#fff;line-height:1; }
+.why-credential .lbl { font-family:var(--ff);font-size:10px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.8);margin-top:4px; }
+.why-features { margin-top:36px;display:flex;flex-direction:column; }
+.why-feat { display:flex;gap:18px;align-items:flex-start;padding:20px 0;border-bottom:1px solid var(--stone); }
+.why-feat:last-child { border-bottom:none; }
+.why-feat-num { font-family:var(--ff);font-size:13px;font-weight:800;color:var(--orange);padding-top:1px;min-width:22px; }
+.why-feat-text strong { font-family:var(--ff);font-size:14px;font-weight:700;color:var(--ink);display:block;margin-bottom:3px; }
+.why-feat-text span { font-family:var(--ff);font-size:13px;font-weight:300;color:var(--body-txt);line-height:1.65; }
+
+/* TEAM */
+.team-bg { background:var(--white); }
+.team-header { margin-bottom:48px; }
+.team-grid { display:grid;grid-template-columns:repeat(4,1fr);gap:24px; }
+.team-card { min-width:0; }
+.team-img-wrap { overflow:hidden;border-radius:14px;background:var(--cream-deep);aspect-ratio:2/3;display:flex;align-items:center;justify-content:center; }
+.team-info { padding:16px 0 0; }
+.team-name { font-family:var(--ff);font-size:18px;font-weight:700;color:var(--ink);margin-bottom:3px; }
+.team-role { font-family:var(--ff);font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--blue-dark);margin-bottom:10px; }
+.team-bio  { font-family:var(--ff);font-size:13px;font-weight:300;color:var(--body-txt);line-height:1.65; }
+
+/* TESTIMONIALS — cream background, light and warm */
+.testimonials-bg { background:var(--orange-soft); }
+.testimonials-inner { max-width:1160px;margin:0 auto;padding:96px 32px; }
+.testimonials-hd { margin-bottom:48px; }
+.carousel-outer { position:relative; }
+.carousel-outer::before,.carousel-outer::after { content:'';position:absolute;top:0;bottom:0;width:72px;z-index:2;pointer-events:none; }
+.carousel-outer::before { left:0;background:linear-gradient(to right,var(--orange-soft),transparent); }
+.carousel-outer::after  { right:0;background:linear-gradient(to left,var(--orange-soft),transparent); }
+.carousel-viewport { overflow:hidden; }
+.carousel-track { display:flex;will-change:transform; }
+.review-card { flex:0 0 calc(33.333%);min-width:calc(33.333%);padding:0 10px;box-sizing:border-box; }
+.review-card-inner { background:var(--white);border:1px solid var(--stone);border-radius:14px;padding:32px 26px;height:100%;transition:border-color .2s,box-shadow .2s; }
+.review-card-inner:hover { border-color:var(--orange);box-shadow:0 4px 20px rgba(232,96,26,.1); }
+.stars { color:var(--orange);font-size:14px;letter-spacing:2px;margin-bottom:18px; }
+.review-text { font-family:var(--ff);font-size:14px;font-weight:300;color:var(--body-txt);line-height:1.8;margin-bottom:24px; }
+.reviewer-divider { width:28px;height:2px;background:var(--blue);margin-bottom:14px;border-radius:1px; }
+.reviewer-name { font-family:var(--ff);font-size:14px;font-weight:700;color:var(--ink); }
+.reviewer-source { font-family:var(--ff);font-size:11px;font-weight:400;color:var(--light-txt);margin-top:3px; }
+.review-progress { height:3px;background:var(--stone);margin-top:36px;border-radius:2px;overflow:hidden; }
+.review-progress-fill { height:100%;background:var(--orange);border-radius:2px;transition:width .4s ease;width:20%; }
+.carousel-controls { display:flex;align-items:center;justify-content:center;gap:16px;margin-top:20px; }
+.arr-btn { width:44px;height:44px;flex-shrink:0;border-radius:50%;background:var(--white);border:2px solid var(--stone);color:var(--ink);cursor:pointer;display:grid;place-items:center;transition:all .2s; }
+.arr-btn:hover { border-color:var(--orange);color:var(--orange); }
+.arr-btn svg { width:16px;height:16px; }
+.carousel-google-link { font-family:var(--ff);font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--light-txt);transition:color .2s; }
+.carousel-google-link:hover { color:var(--orange); }
+
+/* CONTACT */
+.contact-bg { background:var(--white); }
+.contact-grid { display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start; }
+.contact-block { margin-bottom:26px; }
+.contact-block.last { margin-bottom:0; }
+.contact-lbl { font-family:var(--ff);font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--light-txt);margin-bottom:6px; }
+.contact-val { font-family:var(--ff);font-size:20px;font-weight:700;color:var(--ink); }
+.contact-detail { font-family:var(--ff);font-size:13px;font-weight:300;color:var(--body-txt);margin-top:2px; }
+.hours-row { display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--cream-deep); }
+.hours-row:last-child { border-bottom:none; }
+.hours-day,.hours-time { font-family:var(--ff);font-size:13px;font-weight:300;color:var(--body-txt); }
+.hours-day { font-weight:400; }
+.map-embed { border-radius:14px;overflow:hidden;border:2px solid var(--stone); }
+.map-embed iframe { width:100%;height:320px;display:block;border:none; }
+
+/* CTA — warm cream, not dark */
+.cta-section { background:var(--cream-deep);padding:96px 32px;text-align:center;border-top:3px solid var(--orange); }
+.cta-inner { max-width:640px;margin:0 auto; }
+.cta-eyebrow { font-family:var(--ff);font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--orange);margin-bottom:18px; }
+.cta-actions { display:flex;justify-content:center;gap:14px;margin-top:36px;flex-wrap:wrap; }
+
+/* FOOTER */
+footer { background:var(--ink);padding:64px 0 32px; }
+.footer-top { display:grid;grid-template-columns:2fr 1fr 1fr;gap:48px;margin-bottom:48px; }
+.footer-brand p { font-family:var(--ff);font-size:13px;font-weight:300;color:rgba(255,255,255,.45);line-height:1.75;margin-top:14px;max-width:280px; }
+.footer-col h4 { font-family:var(--ff);font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:16px; }
+.footer-col ul { list-style:none; }
+.footer-col ul li { margin-bottom:10px; }
+.footer-col ul li a { font-family:var(--ff);font-size:13px;font-weight:300;color:rgba(255,255,255,.55);transition:color .2s; }
+.footer-col ul li a:hover { color:var(--orange); }
+.footer-bottom { border-top:1px solid rgba(255,255,255,.08);padding-top:24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px; }
+.footer-bottom p { font-family:var(--ff);font-size:11px;font-weight:300;color:rgba(255,255,255,.3); }
+
+/* RESPONSIVE */
+@media (max-width:1024px) {
+  .why-grid { grid-template-columns:1fr; }
+  .why-img-wrap { display:none; }
+  .team-grid { grid-template-columns:repeat(2,1fr); }
+  .footer-top { grid-template-columns:1fr 1fr; }
+}
+@media (max-width:768px) {
+  nav,.header-actions .btn-primary { display:none; }
+  .hamburger { display:flex; }
+  .logo-sub { display:none; }
+  .logo-main { font-size:15px; }
+  .header-inner { padding:0 16px; }
+  .hero { min-height:85vh; }
+  .hero-overlay { background:linear-gradient(to bottom,rgba(26,20,16,.88) 0%,rgba(26,20,16,.6) 60%,rgba(26,20,16,.15) 100%); }
+  .trust-inner { flex-direction:column;height:auto;padding:12px 20px; }
+  .trust-item { border-right:none;border-bottom:1px solid rgba(255,255,255,.2);padding:10px 0; }
+  .trust-item:last-child { border-bottom:none; }
+  .services-grid { grid-template-columns:1fr;gap:0;background:none; }
+  .service-card { border-bottom:1px solid var(--stone); }
+  .contact-grid { grid-template-columns:1fr;gap:40px; }
+  .footer-top { grid-template-columns:1fr; }
+  .footer-bottom { flex-direction:column;align-items:flex-start; }
+  .review-card { flex:0 0 100%;min-width:100%; }
+  .team-grid { grid-template-columns:1fr 1fr; }
+  .carousel-outer::before,.carousel-outer::after { width:24px; }
+  .container { padding:0 20px; }
+  .section { padding:64px 0; }
+}
+@media (max-width:480px) { .team-grid { grid-template-columns:1fr; } }
+</style>
+</head>
+<body>
+
+<!-- MOBILE NAV -->
+<div class="mobile-nav" id="mobileNav">
+  <a href="#services" onclick="toggleNav()">Services</a>
+  <a href="#why" onclick="toggleNav()">About</a>
+  <a href="#team" onclick="toggleNav()">Our Team</a>
+  <a href="#reviews" onclick="toggleNav()">Reviews</a>
+  <a href="#contact" onclick="toggleNav()">Contact</a>
+  <a href="tel:4169793937" class="mob-phone">(416) 979-3937</a>
+</div>
+
+<!-- HEADER -->
+<header>
+  <div class="header-inner">
+    <div class="logo-wrap">
+      <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <rect width="40" height="40" rx="10" fill="#E8601A" opacity="0.1"/>
+        <circle cx="13.5" cy="22" r="7" stroke="#E8601A" stroke-width="2" fill="none"/>
+        <circle cx="26.5" cy="22" r="7" stroke="#E8601A" stroke-width="2" fill="none"/>
+        <path d="M6 22 L4.5 19" stroke="#E8601A" stroke-width="1.8" stroke-linecap="round"/>
+        <path d="M34 22 L35.5 19" stroke="#E8601A" stroke-width="1.8" stroke-linecap="round"/>
+        <text x="20" y="10.5" text-anchor="middle" font-family="sans-serif" font-size="5" font-weight="700" fill="#2AABBF" letter-spacing=".8">1993</text>
+      </svg>
+      <div class="logo-text">
+        <span class="logo-main">Specs &amp; Specs Optical</span>
+        <span class="logo-sub">292 Queen St W &middot; Toronto</span>
+      </div>
+    </div>
+    <nav>
+      <a href="#services">Services</a>
+      <a href="#why">About</a>
+      <a href="#team">Our Team</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="header-actions">
+      <a href="tel:4169793937" class="header-phone">(416) 979-3937</a>
+      <a href="#contact" class="btn-primary">Visit Us</a>
+    </div>
+    <button class="hamburger" onclick="toggleNav()" aria-label="Open menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <img class="hero-img"
+    src="https://lh3.googleusercontent.com/p/AF1QipMSh0UYDc8LLP73AbHFg2s65ZINeqDNXyPC8cxX=w1400-h800-k-no"
+    alt="Specs &amp; Specs Optical storefront on Queen Street West, Toronto"
+    width="1400" height="800"
+    onerror="this.src='https://images.unsplash.com/photo-1509695507497-903c140c43b0?auto=format&fit=crop&w=1400&q=80'">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-inner">
+      <div class="eyebrow">Queen St West &middot; Est. 1993</div>
+      <h1 class="hero-h1">Eyewear with<br><span class="accent">real</span> personality.</h1>
+      <div class="hero-divider"></div>
+      <p class="hero-sub">Toronto's independent optical boutique on Queen Street West — curating frames from around the world for over 30 years.</p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn-primary">Find Us</a>
+        <a href="tel:4169793937" class="btn-outline-dark" style="color:#fff;border-color:rgba(255,255,255,.6);" onmouseover="this.style.background='rgba(255,255,255,.12)'" onmouseout="this.style.background='transparent'">Call (416) 979-3937</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST STRIP — orange band, white text -->
+<div class="trust-strip">
+  <div class="trust-inner">
+    <div class="trust-item"><div class="trust-dot"></div><div><div class="trust-label">Est. 1993</div><div class="trust-sub">30+ years on Queen West</div></div></div>
+    <div class="trust-item"><div class="trust-dot"></div><div><div class="trust-label">4.7&#9733; Google</div><div class="trust-sub">67 verified reviews</div></div></div>
+    <div class="trust-item"><div class="trust-dot"></div><div><div class="trust-label">Multi-Lingual</div><div class="trust-sub">Service in multiple languages</div></div></div>
+    <div class="trust-item"><div class="trust-dot"></div><div><div class="trust-label">Walk-Ins Welcome</div><div class="trust-sub">No appointment needed</div></div></div>
+    <div class="trust-item"><div class="trust-dot"></div><div><div class="trust-label">Frames Worldwide</div><div class="trust-sub">Independently curated</div></div></div>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section class="section services-bg" id="services">
+  <div class="container">
+    <div class="services-hd">
+      <div>
+        <div class="eyebrow blue">What We Offer</div>
+        <h2 class="section-title">Eyewear for every face,<br>style <span class="accent">&amp; prescription.</span></h2>
+      </div>
+      <a href="tel:4169793937" class="btn-stone">Call to Ask About a Frame</a>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon"><svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><circle cx="8.5" cy="12" r="5.5"/><circle cx="15.5" cy="12" r="5.5"/></svg></div>
+        <div class="service-name">Prescription Eyeglasses</div>
+        <div class="service-desc">Bring your prescription and browse a hand-picked collection of frames from around the world. Fashion-forward and classic styles, all under one roof.</div>
+        <span class="service-arrow">&#8594;</span>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"><svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3c-2.5 3-4 5.5-4 9s1.5 6 4 9"/><path d="M12 3c2.5 3 4 5.5 4 9s-1.5 6-4 9"/></svg></div>
+        <div class="service-name">Designer Sunglasses</div>
+        <div class="service-desc">A curated mix of fashion-forward sunglasses from designers around the world — the latest styles alongside timeless classics.</div>
+        <span class="service-arrow">&#8594;</span>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"><svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M15.232 5.232l3.536 3.536M9 13l6.5-6.5a2 2 0 012.829 2.828L11.828 16H9v-3z"/><path d="M3 21h18"/></svg></div>
+        <div class="service-name">Prescription Lenses</div>
+        <div class="service-desc">New lenses for frames you already own — including prescription sunglasses. Colour matching and lens upgrades available.</div>
+        <span class="service-arrow">&#8594;</span>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"><svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"/></svg></div>
+        <div class="service-name">Glasses Repair</div>
+        <div class="service-desc">Broken frames, loose screws, bent temples — bring them in and the team will take care of it. Quick turnarounds on most repairs.</div>
+        <span class="service-arrow">&#8594;</span>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"><svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"/></svg></div>
+        <div class="service-name">Frame Fitting &amp; Adjustments</div>
+        <div class="service-desc">Every pair fitted to your face. Walk in for an adjustment on existing glasses at any time — no purchase required.</div>
+        <span class="service-arrow">&#8594;</span>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"><svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129"/></svg></div>
+        <div class="service-name">Multi-Lingual Service</div>
+        <div class="service-desc">The Specs &amp; Specs team serves customers in multiple languages — so you can describe exactly what you're looking for.</div>
+        <span class="service-arrow">&#8594;</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section class="section why-bg" id="why">
+  <div class="container">
+    <div class="why-grid">
+      <div class="why-img-wrap">
+        <img class="why-img-main"
+          src="https://lh3.googleusercontent.com/gps-cs-s/AHVAweoVdWcFRpTVXjo04TD0r6mXW0_pdJOH7ZYgegJP34V3blez3Z2ofTwRlZrqxbpj97SC8Ep5-fdxPX34NymhzBTheXfJpBKuO-19poEkr8M_O8NNNOjWLrWcQhq4IIZcT-T-sIdgXBV6oa4=w900-h1200-k-no"
+          alt="Inside Specs &amp; Specs Optical" width="560" height="700" loading="lazy"
+          onerror="this.src='https://images.unsplash.com/photo-1607968565043-36af90dde238?auto=format&fit=crop&w=700&q=80'">
+        <div class="why-credential"><div class="num">30+</div><div class="lbl">Years on Queen West</div></div>
+      </div>
+      <div>
+        <div class="eyebrow blue">About the Store</div>
+        <h2 class="section-title">Fashion district roots.<br><span class="accent">Independent spirit.</span></h2>
+        <div class="section-divider"></div>
+        <p class="section-body">Specs &amp; Specs Optical has been part of Queen Street West since 1993. The store carries brand name and independent designer frames sourced from around the world — hand-selected by a buyer with a sharp eye for what actually works in Toronto's most fashion-forward neighbourhood.</p>
+        <div class="why-features">
+          <div class="why-feat"><div class="why-feat-num">01</div><div class="why-feat-text"><strong>A Curated Selection</strong><span>The team is intentional about what they stock. You'll find variety without the overwhelming volume of a chain — and staff who know every frame on the wall.</span></div></div>
+          <div class="why-feat"><div class="why-feat-num">02</div><div class="why-feat-text"><strong>They'll Find What Works for Your Face</strong><span>The staff take time to understand what you actually want — working with you to find frames that suit you, not just what's popular.</span></div></div>
+          <div class="why-feat"><div class="why-feat-num">03</div><div class="why-feat-text"><strong>Repairs Welcome</strong><span>Bring in your glasses and the team will handle adjustments, repairs, and lens replacements — quick and straightforward.</span></div></div>
+          <div class="why-feat"><div class="why-feat-num">04</div><div class="why-feat-text"><strong>Multi-Lingual &amp; Walk-In Friendly</strong><span>No appointment needed. Multi-lingual service available. Street and bike parking nearby.</span></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TEAM -->
+<section class="section team-bg" id="team">
+  <div class="container">
+    <div class="team-header">
+      <div class="eyebrow blue">The Team</div>
+      <h2 class="section-title">People who know<br><span class="accent">eyewear deeply.</span></h2>
+    </div>
+    <div class="team-grid">
+      <div class="team-card">
+        <div class="team-img-wrap"><div style="width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;"><svg width="52" height="52" fill="none" viewBox="0 0 24 24" stroke="#C8D0D4" stroke-width="0.9"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg><span style="font-family:var(--ff);font-size:10px;font-weight:400;letter-spacing:.12em;text-transform:uppercase;color:#C8D0D4">Photo coming soon</span></div></div>
+        <div class="team-info"><div class="team-name">Manager</div><div class="team-role">Manager &amp; Optician</div><div class="team-bio">The heart of Specs &amp; Specs — on the floor every day, helping customers find frames that fit their face, their lifestyle, and their budget. Decades of experience, zero pressure.</div></div>
+      </div>
+      <div class="team-card">
+        <div class="team-img-wrap"><div style="width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;"><svg width="52" height="52" fill="none" viewBox="0 0 24 24" stroke="#C8D0D4" stroke-width="0.9"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg><span style="font-family:var(--ff);font-size:10px;font-weight:400;letter-spacing:.12em;text-transform:uppercase;color:#C8D0D4">Photo coming soon</span></div></div>
+        <div class="team-info"><div class="team-name">Optician</div><div class="team-role">Optician</div><div class="team-bio">Handles fittings, lens orders, and adjustments with care. Customers leave with exactly what they came for — and often something better than they expected.</div></div>
+      </div>
+      <div class="team-card">
+        <div class="team-img-wrap"><div style="width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;"><svg width="52" height="52" fill="none" viewBox="0 0 24 24" stroke="#C8D0D4" stroke-width="0.9"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg><span style="font-family:var(--ff);font-size:10px;font-weight:400;letter-spacing:.12em;text-transform:uppercase;color:#C8D0D4">Photo coming soon</span></div></div>
+        <div class="team-info"><div class="team-name">Optician</div><div class="team-role">Optician</div><div class="team-bio">Knowledgeable on lens options, frame materials, and what works for different prescriptions. A calm, attentive approach to every interaction.</div></div>
+      </div>
+      <div class="team-card">
+        <div class="team-img-wrap"><div style="width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;"><svg width="52" height="52" fill="none" viewBox="0 0 24 24" stroke="#C8D0D4" stroke-width="0.9"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg><span style="font-family:var(--ff);font-size:10px;font-weight:400;letter-spacing:.12em;text-transform:uppercase;color:#C8D0D4">Photo coming soon</span></div></div>
+        <div class="team-info"><div class="team-name">Frame Specialist</div><div class="team-role">Frame Specialist</div><div class="team-bio">Knows the inventory inside out and has a real eye for what flatters different face shapes. The person to see when you're not sure what you're looking for.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS — warm cream background, white cards -->
+<section class="testimonials-bg" id="reviews">
+  <div class="testimonials-inner">
+    <div class="testimonials-hd">
+      <div class="eyebrow">Our Reviews</div>
+      <h2 class="section-title">What Customers<br>Say About <span class="accent">Us.</span></h2>
+    </div>
+
+    <div class="carousel-outer">
+      <div class="carousel-viewport">
+        <div class="carousel-track" id="carouselTrack">
+
+          <div class="review-card"><div class="review-card-inner">
+            <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <p class="review-text">The staff have an amazing ability to pick out frames that are well-suited to your face shape and personality. I've bought many eyeglasses there and always leave feeling like I've just had a makeover.</p>
+            <div class="reviewer-divider"></div>
+            <div class="reviewer-name">Roberta O.</div>
+            <div class="reviewer-source">Google Review</div>
+          </div></div>
+
+          <div class="review-card"><div class="review-card-inner">
+            <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <p class="review-text">Really helpful staff. Nancy helped me choose a frame I was uncertain about — with her knowledge and styling sense, she convinced me, and she was right. Affordable frames and lots of styles to choose from.</p>
+            <div class="reviewer-divider"></div>
+            <div class="reviewer-name">Gerry Lee</div>
+            <div class="reviewer-source">Google Review</div>
+          </div></div>
+
+          <div class="review-card"><div class="review-card-inner">
+            <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <p class="review-text">John offers excellent service and product knowledge, reasonable prices, and a good eye for style. He chose a frame for me that my wife loved — and through his technical know-how, minimized the thickness on my heavy prescription. Would definitely deal with Specs &amp; Specs again.</p>
+            <div class="reviewer-divider"></div>
+            <div class="reviewer-name">John S.</div>
+            <div class="reviewer-source">Google Review</div>
+          </div></div>
+
+          <div class="review-card"><div class="review-card-inner">
+            <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <p class="review-text">I had a fantastic experience buying prescription eyewear here. Amelia helped me try on styles — I felt totally at ease, no pressure at all. You can tell they're intentional about what they carry. Highly recommend!</p>
+            <div class="reviewer-divider"></div>
+            <div class="reviewer-name">M.A.</div>
+            <div class="reviewer-source">Google Review</div>
+          </div></div>
+
+          <div class="review-card"><div class="review-card-inner">
+            <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <p class="review-text">Been going there for 10 years — great service, good selection. I returned after a year to change the lenses and received a warm welcome and prompt service. The owner is wonderful and the staff are super friendly and knowledgeable.</p>
+            <div class="reviewer-divider"></div>
+            <div class="reviewer-name">Long-time Customer</div>
+            <div class="reviewer-source">Google Review</div>
+          </div></div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="review-progress"><div class="review-progress-fill" id="reviewProgress"></div></div>
+
+    <div class="carousel-controls">
+      <button class="arr-btn" id="carouselPrev" aria-label="Previous review"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg></button>
+      <a href="https://www.google.com/maps/place/Specs+%26+Specs+Optical/@43.6496281,-79.3930388,17z/" target="_blank" rel="noopener" class="carousel-google-link">View all on Google Maps &#8594;</a>
+      <button class="arr-btn" id="carouselNext" aria-label="Next review"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></button>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="section contact-bg" id="contact">
+  <div class="container">
+    <div class="contact-grid">
+      <div>
+        <div class="eyebrow blue">Find Us</div>
+        <h2 class="section-title">Come see us on<br><span class="accent">Queen Street West.</span></h2>
+        <div class="section-divider"></div>
+        <div class="contact-block">
+          <div class="contact-lbl">Address</div>
+          <span class="contact-val">292 Queen St W</span>
+          <div class="contact-detail">Toronto, ON M5V 2A1</div>
+        </div>
+        <div class="contact-block">
+          <div class="contact-lbl">Phone</div>
+          <a href="tel:4169793937" class="contact-val" style="color:var(--ink);">(416) 979-3937</a>
+        </div>
+        <div class="contact-block">
+          <div class="contact-lbl">Email</div>
+          <a href="mailto:Specs_and_specs_optical@hotmail.com" class="contact-val" style="color:var(--ink);font-size:14px;">Specs_and_specs_optical@hotmail.com</a>
+        </div>
+        <div class="contact-block last">
+          <div class="contact-lbl">Store Hours</div>
+          <div style="margin-top:8px;">
+            <div class="hours-row"><span class="hours-day">Monday – Saturday</span><span class="hours-time">11:00 AM – 8:00 PM</span></div>
+            <div class="hours-row"><span class="hours-day">Sunday</span><span class="hours-time">12:00 PM – 6:00 PM</span></div>
+          </div>
+        </div>
+        <div style="display:flex;gap:12px;margin-top:28px;flex-wrap:wrap;">
+          <a href="tel:4169793937" class="btn-primary">Call Us</a>
+          <a href="https://www.instagram.com/specsandspecs/" target="_blank" rel="noopener" class="btn-stone">Instagram</a>
+          <a href="https://www.facebook.com/SpecsSpecsOptical/" target="_blank" rel="noopener" class="btn-stone">Facebook</a>
+        </div>
+      </div>
+      <div>
+        <div class="map-embed">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2886.4!2d-79.395139!3d43.649628!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882b34d0040926a7%3A0x1dc0f7f75457946e!2sSpecs%20%26%20Specs%20Optical!5e0!3m2!1sen!2sca!4v1710000000000!5m2!1sen!2sca" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Specs &amp; Specs Optical — 292 Queen St W, Toronto" allowfullscreen></iframe>
+        </div>
+        <a href="https://www.google.com/maps/dir/?api=1&destination=Specs+%26+Specs+Optical,+292+Queen+St+W,+Toronto,+ON+M5V+2A1" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:5px;margin-top:10px;font-family:var(--ff);font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--light-txt);transition:color .2s;" onmouseover="this.style.color='var(--orange)'" onmouseout="this.style.color='var(--light-txt)'">Open in Google Maps &#8594;</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA — warm cream, not dark -->
+<section class="cta-section">
+  <div class="cta-inner">
+    <div class="cta-eyebrow">Queen Street West Since 1993</div>
+    <h2 class="section-title">Your next pair is<br><span class="accent">waiting on the wall.</span></h2>
+    <p class="section-body" style="margin:16px auto 0;text-align:center;max-width:480px;">No appointment needed. Walk in, try frames, leave with something you love.</p>
+    <div class="cta-actions">
+      <a href="https://www.google.com/maps/dir/?api=1&destination=Specs+%26+Specs+Optical,+292+Queen+St+W,+Toronto,+ON+M5V+2A1" target="_blank" rel="noopener" class="btn-primary">Get Directions</a>
+      <a href="tel:4169793937" class="btn-outline-orange">Call (416) 979-3937</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <span style="font-family:var(--ff);font-size:16px;font-weight:800;color:#fff;">Specs &amp; Specs Optical</span>
+        <p>Toronto's independent eyewear boutique on Queen Street West. Curated frames from around the world. Multi-lingual staff. Walk-ins welcome. Est. 1993.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#services">Prescription Eyeglasses</a></li>
+          <li><a href="#services">Designer Sunglasses</a></li>
+          <li><a href="#services">Prescription Lenses</a></li>
+          <li><a href="#services">Glasses Repair</a></li>
+          <li><a href="#services">Frame Adjustments</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Connect</h4>
+        <ul>
+          <li><a href="#team">Our Team</a></li>
+          <li><a href="#reviews">Reviews</a></li>
+          <li><a href="https://www.instagram.com/specsandspecs/" target="_blank" rel="noopener">Instagram</a></li>
+          <li><a href="https://www.facebook.com/SpecsSpecsOptical/" target="_blank" rel="noopener">Facebook</a></li>
+          <li><a href="#contact">Contact Us</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Specs &amp; Specs Optical &bull; 292 Queen St W, Toronto, ON M5V 2A1 &bull; (416) 979-3937</p>
+      <p>Demo site created by Ampersand Forever for presentation purposes.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  function toggleNav() {
+    var nav = document.getElementById('mobileNav');
+    nav.classList.toggle('open');
+    document.body.style.overflow = nav.classList.contains('open') ? 'hidden' : '';
+  }
+
+  (function() {
+    var track    = document.getElementById('carouselTrack');
+    var prevBtn  = document.getElementById('carouselPrev');
+    var nextBtn  = document.getElementById('carouselNext');
+    var progress = document.getElementById('reviewProgress');
+    var REAL = 5, busy = false, realIdx = 0, ci = 0;
+
+    function spv() { return window.innerWidth < 768 ? 1 : window.innerWidth < 1024 ? 2 : 3; }
+    function cw()  { var c = track.querySelector('.review-card'); return c ? c.offsetWidth : 0; }
+    function setBar(i) { progress.style.width = ((i + 1) / REAL * 100) + '%'; }
+    function setPos(i, animate) {
+      track.style.transition = animate ? 'transform .5s cubic-bezier(.4,0,.2,1)' : 'none';
+      track.style.transform  = 'translateX(-' + (i * cw()) + 'px)';
+    }
+
+    function init() {
+      track.querySelectorAll('.clone').forEach(function(c) { c.parentNode.removeChild(c); });
+      var s = spv();
+      var orig = track.querySelectorAll('.review-card:not(.clone)');
+      for (var i = REAL - 1; i >= REAL - s; i--) { var cl = orig[i].cloneNode(true); cl.classList.add('clone'); track.insertBefore(cl, track.firstChild); }
+      for (var j = 0; j < s; j++) { var cl2 = orig[j].cloneNode(true); cl2.classList.add('clone'); track.appendChild(cl2); }
+      ci = s; realIdx = 0; setPos(ci, false); setBar(0);
+    }
+
+    function step(dir) {
+      if (busy) return; busy = true;
+      var s = spv();
+      ci += dir; realIdx = ((realIdx + dir) % REAL + REAL) % REAL;
+      setPos(ci, true); setBar(realIdx);
+      track.addEventListener('transitionend', function h() {
+        track.removeEventListener('transitionend', h); busy = false;
+        if (ci >= REAL + s) { ci = s;            setPos(ci, false); }
+        if (ci < s)         { ci = REAL + s - 1; setPos(ci, false); }
+      });
+    }
+
+    prevBtn.onclick = function() { step(-1); };
+    nextBtn.onclick = function() { step(1); };
+
+    var tsX = null;
+    track.addEventListener('touchstart', function(e) { tsX = e.touches[0].clientX; }, { passive: true });
+    track.addEventListener('touchend',   function(e) {
+      if (tsX === null) return;
+      var dx = e.changedTouches[0].clientX - tsX;
+      if (Math.abs(dx) > 40) step(dx < 0 ? 1 : -1);
+      tsX = null;
+    }, { passive: true });
+
+    var rt;
+    window.addEventListener('resize', function() { clearTimeout(rt); rt = setTimeout(init, 120); });
+    init();
+  })();
+</script>
+</body>
+</html>
